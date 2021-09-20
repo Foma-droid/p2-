@@ -223,7 +223,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 8.505
+  m_Radius: 3.94
 --- !u!212 &164921088
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -303,7 +303,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 1
-  damage: 1
   coin: {fileID: 164921086}
   chrome: {fileID: 637380585}
   text: {fileID: 528075586}
@@ -579,7 +578,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 4.32
+  m_Radius: 2.87
 --- !u!212 &637380588
 SpriteRenderer:
   m_ObjectHideFlags: 0

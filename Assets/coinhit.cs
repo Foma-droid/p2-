@@ -6,38 +6,40 @@ using UnityEngine.UIElements;
 
 public class coinhit : MonoBehaviour
 {
-    public float hp = 1;
-    public float damage = 1;
+    public float hp = 2;
+    
     public GameObject coin;
-    private float currenthp;
+    
     public GameObject chrome;
     public TextMeshProUGUI text;
-    public float MinusHP()
-    {
-        RaycastHit2D hit = Physics2D.CircleCast(transform.position, 8.505f, Vector2.down);
-        if (hit.collider.CompareTag("Coin"))
-        {
-            currenthp = hp - damage;
-            if (currenthp == 0)
-            {
-                Destroy(coin.gameObject);
-            }
-        }
-
-        return currenthp;
-
-    }
+    
+   
+    
 
     // Start is called before the first frame update
     void Start()
     {
-        text.transform.LookAt(coin.transform.position);
-        
+        RaycastHit2D[] hit = Physics2D.CircleCastAll(transform.position, 2f, Vector2.zero);
+        if (hit != null)
+        {
+            hp--;
+           
+           
+        }
+        if (hp == 0)
+        {
+            Destroy(coin.gameObject);
+        }
+        text.text = hp.ToString();
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+    public void OnDrawGizmos()
+    {
+        Gizmos.DrawSphere(transform.position, 2f);
     }
 }
